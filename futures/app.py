@@ -50,5 +50,11 @@ def submit():
     db.session.commit()
     return redirect("/")
 
+@app.route("/logs")
+def logs():
+    trades = Trade.query.all()
+    return render_template("logs.html", trades=trades)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

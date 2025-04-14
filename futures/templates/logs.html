@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Trade Logs{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trade Logs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1e1e2f;
+            color: #fff;
+            padding: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #2f2f44;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #444;
+            text-align: left;
+        }
+        th {
+            background-color: #00b894;
+        }
+        tr:nth-child(even) {
+            background-color: #39395a;
+        }
+    </style>
+</head>
+<body>
+    <h1>📈 Trade Logs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Entry Price</th>
+                <th>Exit Price</th>
+                <th>Margin</th>
+                <th>Side</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trade in trades %}
+            <tr>
+                <td>{{ trade.symbol }}</td>
+                <td>{{ trade.entry_price }}</td>
+                <td>{{ trade.actual_exit_price }}</td>
+                <td>{{ trade.margin }}</td>
+                <td>{{ trade.side }}</td>
+                <td>{{ trade.entry_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}

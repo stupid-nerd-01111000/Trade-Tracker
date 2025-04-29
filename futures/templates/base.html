@@ -1,42 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Trade Tracker{% endblock %}</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: #1e1e2f;
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-        }
-        nav {
-            background-color: #111;
-            padding: 15px;
-            display: flex;
-            justify-content: space-around;
-        }
-        nav a {
-            color: #00b894;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        nav a:hover {
-            color: #74ffdc;
-        }
-        .content {
-            padding: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav>
-        <a href="/">📝 New Trade</a>
-        <a href="/logs">📋 Trade Logs</a>
-        <a href="#">📊 Stats (Coming Soon)</a>
-    </nav>
+    <header>
+        <div class="logo-container">
+            <h1>🚀 Trade Tracker</h1>
+        </div>
+        <nav class="navbar">
+            <a href="/form" class="nav-link">📝 New Trade</a>
+            <a href="/logs" class="nav-link">📋 Trade Logs</a>
+            <a href="/status" class="nav-link">📊 Stats</a>
+        </nav>
+    </header>
+
     <div class="content">
         {% block content %}{% endblock %}
     </div>
+
+    <footer>
+        <p>&copy; 2025 Trade Tracker | All Rights Reserved</p>
+    </footer>
 </body>
 </html>

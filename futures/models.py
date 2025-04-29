@@ -35,3 +35,17 @@ class Trade(db.Model):
     exit_date = db.Column(db.String(20))
     exit_mental_state = db.Column(db.Text)
     exit_screenshot_link = db.Column(db.String(255))
+
+
+class Status(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    pair = db.Column(db.String(100))
+    exchange = db.Column(db.String(100))
+    fee_percent = db.Column(db.Float)
+    year = db.Column(db.Integer)
+    mental_state = db.Column(db.String(100))
+    strategy = db.Column(db.String(100))
+    mistake = db.Column(db.String(100))
+    tracking = db.Column(db.String(100))
+    check_item = db.Column(db.String(100))
+    time_frame = db.Column(db.String(100))

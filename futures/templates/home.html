@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <h1 class="headline">🏠 Welcome to Trade Tracker</h1>
+    <p class="tagline">Let’s make some smart moves today and track your trades efficiently!</p>
+    
+    <div class="cta-buttons">
+        <a href="/form" class="btn new-trade-btn">➕ New Trade</a>
+        <a href="/logs" class="btn logs-btn">📋 Trades Log</a>
+    </div>
+</div>
+{% endblock %}
